@@ -14,7 +14,8 @@ tsconfig.tsbuildinfo
 public/assets/preview.jpg
 
 # Original export and duplicate working assets (the deployed copies live in public/assets)
-revup-media-website-v2.html
+# The original export is published from public/ so Next.js can render it exactly.
+/revup-media-website-v2.html
 rave.html
 builder stack.jpg
 Frame 2095586451.png

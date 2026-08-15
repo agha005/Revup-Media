@@ -6,7 +6,7 @@
 }
 
 html { scroll-behavior: smooth; }
-body { background: #070a08; color: #eef6e9; }
+body { margin: 0; background: #070a08; color: #eef6e9; }
 ::selection { background: #caff70; color: #071008; }
 details summary::-webkit-details-marker { display: none; }
 details[open] summary span { transform: rotate(45deg); }
