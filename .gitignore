@@ -1,0 +1,22 @@
+# Dependencies and Next.js build output
+node_modules/
+.next/
+out/
+
+# Local logs and editor files
+*.log
+.DS_Store
+.vscode/
+
+# Temporary verification output
+build-output.txt
+tsconfig.tsbuildinfo
+public/assets/preview.jpg
+
+# Original export and duplicate working assets (the deployed copies live in public/assets)
+revup-media-website-v2.html
+rave.html
+builder stack.jpg
+Frame 2095586451.png
+LUXXXXE (1).png
+image.png

@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-manrope);
+  --font-display: var(--font-space);
+}
+
+html { scroll-behavior: smooth; }
+body { background: #070a08; color: #eef6e9; }
+::selection { background: #caff70; color: #071008; }
+details summary::-webkit-details-marker { display: none; }
+details[open] summary span { transform: rotate(45deg); }
+@keyframes float-up { to { transform: translateY(-26%); } }
+@keyframes float-down { to { transform: translateY(0); } }
+.email-flow-up { animation: float-up 18s linear infinite alternate; }
+.email-flow-down { animation: float-down 20s linear infinite alternate; transform: translateY(-26%); }
