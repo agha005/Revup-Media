@@ -1,2 +1,4 @@
 dist/.openai/
 site-package.tar.gz
+node_modules/
+.next/
