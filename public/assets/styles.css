@@ -333,6 +333,7 @@ button { font: inherit; }
 .about-copy p { color: var(--muted); font-size: 1.12rem; max-width: 690px; }
 .about-visual { min-height: 480px; border: 1px solid var(--line-soft); border-radius: 18px; overflow: hidden; }
 .about-visual .photo-placeholder { min-height: 480px; border: 0; }
+.about-photo { width: 100%; min-height: 480px; height: 100%; display: block; object-fit: cover; object-position: center top; border-radius: inherit; }
 .approach-panel { display: grid; grid-template-columns: 1.4fr .8fr; gap: 70px; align-items: start; }
 .approach-panel h2 { margin: 18px 0; font-size: clamp(2.7rem,5vw,4.4rem); line-height: 1; letter-spacing: -.055em; font-weight: 520; }
 .approach-panel p { color: var(--muted); font-size: 1.08rem; }
@@ -431,7 +432,7 @@ button { font: inherit; }
   .story-row { grid-template-columns: 1fr; gap: 18px; padding: 42px 0; }
   .case-overview article { padding: 22px; }
   .about-grid, .approach-panel { grid-template-columns: 1fr; gap: 38px; }
-  .about-visual, .about-visual .photo-placeholder { min-height: 360px; }
+  .about-visual, .about-visual .photo-placeholder, .about-photo { min-height: 360px; }
   .email-gallery { grid-template-columns: 1fr; }
 }
 
