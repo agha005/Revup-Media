@@ -1,6 +1,7 @@
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { LegacyEnhancements } from './legacy-enhancements';
+import { WhatsAppChat } from './whatsapp-chat';
 
 const routeMap: Record<string, string> = {
   'index.html': '/', 'about.html': '/about', 'case-studies.html': '/case-studies',
@@ -25,5 +26,6 @@ export function LegacyPage({ source, page }: { source: string; page: string }) {
   return <>
     <LegacyEnhancements page={page} />
     <div dangerouslySetInnerHTML={{ __html: getBodyMarkup(source) }} />
+    <WhatsAppChat />
   </>;
 }
