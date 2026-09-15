@@ -7,6 +7,7 @@ const routeMap: Record<string, string> = {
   'index.html': '/', 'about.html': '/about', 'case-studies.html': '/case-studies',
   'case-study-aussies-merch.html': '/case-studies/aussies-merch', 'case-study-hardbody.html': '/case-studies/hardbody',
   'case-study-linen-tales.html': '/case-studies/linen-tales', 'case-study-popuptee.html': '/case-studies/popuptee',
+  'case-study-moments-with-him.html': '/case-studies/moments-with-him',
   'case-study-twinky.html': '/case-studies/twinky', 'case-study-us-boot.html': '/case-studies/us-boot', 'case-study-vape-at-door.html': '/case-studies/vape-at-door',
 };
 
@@ -19,7 +20,9 @@ function getBodyMarkup(source: string) {
     markup = markup.replaceAll(`href="${legacy}"`, `href="${route}"`).replaceAll(`href='${legacy}'`, `href='${route}'`);
   }
 
-  return markup.replace(/<img\b/gi, '<img loading="lazy" decoding="async"');
+  return markup
+    .replace(/src=(['\"])\/assets\/([^'\"]+)\.(?:png|jpe?g)\1/gi, 'src=$1/assets/$2.webp$1')
+    .replace(/<img\b/gi, '<img loading="lazy" decoding="async"');
 }
 
 export function LegacyPage({ source, page }: { source: string; page: string }) {

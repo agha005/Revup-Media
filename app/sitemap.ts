@@ -10,6 +10,7 @@ const paths = [
   '/case-studies/hardbody',
   '/case-studies/linen-tales',
   '/case-studies/popuptee',
+  '/case-studies/moments-with-him',
   '/case-studies/twinky',
   '/case-studies/us-boot',
   '/case-studies/vape-at-door',
