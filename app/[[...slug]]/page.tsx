@@ -10,6 +10,7 @@ const files: Record<string, string> = {
   'case-studies/twinky': 'case-study-twinky.html', 'case-studies/us-boot': 'case-study-us-boot.html', 'case-studies/vape-at-door': 'case-study-vape-at-door.html',
 };
 
+
 const pageMetadata: Record<string, Metadata> = {
   '': { title: 'Ecommerce Email Marketing Agency', description: 'Ecommerce email marketing for brands that want stronger retention: lifecycle strategy, Klaviyo flows, campaign creative, list growth and email design.', alternates: { canonical: '/' } },
   about: { title: 'About Our Ecommerce Email Marketing Team', description: 'Learn how RevUp Media helps ecommerce brands bring strategy, email design, campaigns and lifecycle automation together.', alternates: { canonical: '/about' } },
@@ -23,14 +24,6 @@ const pageMetadata: Record<string, Metadata> = {
   'case-studies/us-boot': { title: 'US Boot Email Marketing Case Study', description: 'See ecommerce email flows, campaign creative and lifecycle work for US Boot.', alternates: { canonical: '/case-studies/us-boot' } },
   'case-studies/vape-at-door': { title: 'Vape At Door Email Marketing Case Study', description: 'See ecommerce email campaign creative and lifecycle marketing work for Vape At Door.', alternates: { canonical: '/case-studies/vape-at-door' } },
 };
-
-// The legacy pages are file-backed, so list them at build time instead of
-// rendering them on demand. This keeps the public pages fast on first visit.
-export function generateStaticParams() {
-  return Object.keys(files).map((route) => ({
-    slug: route === '' ? [] : route.split('/'),
-  }));
-}
 
 export async function generateMetadata({ params }: { params: Promise<{ slug?: string[] }> }): Promise<Metadata> {
   const { slug = [] } = await params;
