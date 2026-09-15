@@ -10,16 +10,16 @@ const files: Record<string, string> = {
 };
 
 const pageMetadata: Record<string, Metadata> = {
-  '': { title: 'RevUp Media | Ecommerce Email Marketing', description: 'Email strategy, automation and campaign creative for ecommerce brands.' },
-  about: { title: 'About RevUp Media', description: 'Learn about RevUp Media and its ecommerce email approach.' },
-  'case-studies': { title: 'Case Studies | RevUp Media', description: 'Explore approved ecommerce email case studies from RevUp Media.' },
-  'case-studies/aussies-merch': { title: 'Aussies Merch Case Study | RevUp Media', description: 'Lifecycle email work and results for Aussies Merch.' },
-  'case-studies/hardbody': { title: 'HardBody Case Study | RevUp Media', description: 'Email campaign work and results for HardBody.' },
-  'case-studies/linen-tales': { title: 'Linen Tales Case Study | RevUp Media', description: 'Email strategy, creative and results for Linen Tales.' },
-  'case-studies/popuptee': { title: 'PopUpTee Case Study | RevUp Media', description: 'Lifecycle email and campaign work for PopUpTee.' },
-  'case-studies/twinky': { title: 'Twinky Case Study | RevUp Media', description: 'Email flows and campaign work for Twinky.' },
-  'case-studies/us-boot': { title: 'US Boot Case Study | RevUp Media', description: 'Email flows and campaign work for US Boot.' },
-  'case-studies/vape-at-door': { title: 'Vape At Door Case Study | RevUp Media', description: 'Email campaign work for Vape At Door.' },
+  '': { title: 'Ecommerce Email Marketing Agency', description: 'Ecommerce email marketing for brands that want stronger retention: lifecycle strategy, Klaviyo flows, campaign creative, list growth and email design.', alternates: { canonical: '/' } },
+  about: { title: 'About Our Ecommerce Email Marketing Team', description: 'Learn how RevUp Media helps ecommerce brands bring strategy, email design, campaigns and lifecycle automation together.', alternates: { canonical: '/about' } },
+  'case-studies': { title: 'Ecommerce Email Marketing Case Studies', description: 'Explore ecommerce email marketing case studies, including campaign creative, lifecycle flows and supporting results evidence.', alternates: { canonical: '/case-studies' } },
+  'case-studies/aussies-merch': { title: 'Aussies Merch Email Marketing Case Study', description: 'See the lifecycle email work, campaign creative and supporting results for Aussies Merch.', alternates: { canonical: '/case-studies/aussies-merch' } },
+  'case-studies/hardbody': { title: 'HardBody Email Marketing Case Study', description: 'See email campaign creative, lifecycle marketing work and supporting results for HardBody.', alternates: { canonical: '/case-studies/hardbody' } },
+  'case-studies/linen-tales': { title: 'Linen Tales Email Marketing Case Study', description: 'See ecommerce email strategy, creative and supporting results for Linen Tales.', alternates: { canonical: '/case-studies/linen-tales' } },
+  'case-studies/popuptee': { title: 'PopUpTee Email Marketing Case Study', description: 'See lifecycle email marketing and campaign creative work for PopUpTee.', alternates: { canonical: '/case-studies/popuptee' } },
+  'case-studies/twinky': { title: 'Twinky Email Marketing Case Study', description: 'See ecommerce email flows, campaign creative and lifecycle work for Twinky.', alternates: { canonical: '/case-studies/twinky' } },
+  'case-studies/us-boot': { title: 'US Boot Email Marketing Case Study', description: 'See ecommerce email flows, campaign creative and lifecycle work for US Boot.', alternates: { canonical: '/case-studies/us-boot' } },
+  'case-studies/vape-at-door': { title: 'Vape At Door Email Marketing Case Study', description: 'See ecommerce email campaign creative and lifecycle marketing work for Vape At Door.', alternates: { canonical: '/case-studies/vape-at-door' } },
 };
 
 export async function generateMetadata({ params }: { params: Promise<{ slug?: string[] }> }): Promise<Metadata> {
