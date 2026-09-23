@@ -14,6 +14,12 @@ const paths = [
   '/case-studies/twinky',
   '/case-studies/us-boot',
   '/case-studies/vape-at-door',
+  '/services',
+  '/services/klaviyo-email-marketing',
+  '/services/email-automation-flows',
+  '/services/email-campaign-management',
+  '/services/ecommerce-sms-marketing',
+  '/services/email-list-growth',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -21,6 +27,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${siteUrl}${path}`,
     lastModified: new Date(),
     changeFrequency: path.startsWith('/case-studies/') ? 'monthly' : 'weekly',
-    priority: path === '' ? 1 : path === '/case-studies' ? 0.9 : 0.7,
+    priority: path === '' ? 1 : path.startsWith('/services/') || path === '/case-studies' ? 0.9 : 0.7,
   }));
 }

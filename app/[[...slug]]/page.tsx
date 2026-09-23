@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { LegacyPage } from '../components/legacy-page';
+import { ServiceIndex, ServicePage, servicePages } from '../components/service-page';
 
 const files: Record<string, string> = {
   '': 'index.html', about: 'about.html', 'case-studies': 'case-studies.html',
@@ -27,12 +28,20 @@ const pageMetadata: Record<string, Metadata> = {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug?: string[] }> }): Promise<Metadata> {
   const { slug = [] } = await params;
-  return pageMetadata[slug.join('/')] ?? {};
+  const key = slug.join('/');
+  if (key === 'services') return { title: 'Ecommerce Email Marketing Services', description: 'Ecommerce email marketing services for Klaviyo strategy, lifecycle automation, campaigns, SMS and list growth.', alternates: { canonical: '/services' } };
+  const service = servicePages[key];
+  if (service) return { title: service.title, description: service.description, alternates: { canonical: `/${key}` }, openGraph: { title: service.title, description: service.description, url: `/${key}` } };
+  return pageMetadata[key] ?? {};
 }
 
 export default async function Page({ params }: { params: Promise<{ slug?: string[] }> }) {
   const { slug = [] } = await params;
-  const source = files[slug.join('/')];
+  const key = slug.join('/');
+  if (key === 'services') return <ServiceIndex />;
+  const service = servicePages[key];
+  if (service) return <ServicePage service={service} />;
+  const source = files[key];
   if (!source) notFound();
   return <LegacyPage source={source} page={slug.length === 0 ? 'home' : slug[0]} />;
 }
