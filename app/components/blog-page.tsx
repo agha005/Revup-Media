@@ -41,7 +41,7 @@ export const posts: Record<string, Post> = {
   },
 };
 
-function Header() { return <header className="site-header"><div className="container nav-shell"><Link className="brand" href="/"><img src="/assets/revup-logo.png" alt="RevUp Media" /><span>REVUP <span>MEDIA</span></span></Link><nav className="desktop-nav" aria-label="Primary navigation"><Link href="/">Home</Link><Link href="/services">Services</Link><Link href="/case-studies">Case Studies</Link><Link href="/about">About</Link></nav><a className="btn btn-primary btn-small nav-action" href={bookingUrl} target="_blank" rel="noopener">Book Free Audit <span className="arrow">→</span></a></div></header>; }
+function Header() { return <header className="site-header"><div className="container nav-shell"><Link className="brand" href="/"><img src="/assets/revup-logo.png" alt="RevUp Media" /><span>REVUP <span>MEDIA</span></span></Link><nav className="desktop-nav" aria-label="Primary navigation"><Link href="/">Home</Link><Link href="/services">Services</Link><Link href="/blog">Blog</Link><Link href="/case-studies">Case Studies</Link><Link href="/about">About</Link></nav><a className="btn btn-primary btn-small nav-action" href={bookingUrl} target="_blank" rel="noopener">Book Free Audit <span className="arrow">→</span></a></div></header>; }
 
 export function BlogIndex() {
   const blogSchema = { '@context': 'https://schema.org', '@type': 'Blog', name: 'RevUp Media Journal', url: `${siteUrl}/blog`, publisher: { '@id': `${siteUrl}/#organization` } };
