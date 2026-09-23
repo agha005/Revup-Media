@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { LegacyPage } from '../components/legacy-page';
 import { ServiceIndex, ServicePage, servicePages } from '../components/service-page';
 import { EcommerceEmailMarketingGuide } from '../components/guide-page';
+import { BlogIndex, BlogPost, posts } from '../components/blog-page';
 
 const files: Record<string, string> = {
   '': 'index.html', about: 'about.html', 'case-studies': 'case-studies.html',
@@ -31,6 +32,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug?: st
   const { slug = [] } = await params;
   const key = slug.join('/');
   if (key === 'guides/ecommerce-email-marketing-strategy') return { title: 'Ecommerce Email Marketing Strategy Guide', description: 'A practical ecommerce email marketing strategy guide covering automation, campaigns, segmentation, list growth and retention.', alternates: { canonical: '/guides/ecommerce-email-marketing-strategy' } };
+  if (key === 'blog') return { title: 'Ecommerce Email Marketing Blog', description: 'Original ecommerce email marketing, lifecycle automation, segmentation and retention strategy notes from RevUp Media.', alternates: { canonical: '/blog' } };
+  const post = posts[key];
+  if (post) return { title: post.title, description: post.description, alternates: { canonical: `/${key}` }, openGraph: { title: post.title, description: post.description, url: `/${key}` } };
   if (key === 'services') return { title: 'Ecommerce Email Marketing Services', description: 'Ecommerce email marketing services for Klaviyo strategy, lifecycle automation, campaigns, SMS and list growth.', alternates: { canonical: '/services' } };
   const service = servicePages[key];
   if (service) return { title: service.title, description: service.description, alternates: { canonical: `/${key}` }, openGraph: { title: service.title, description: service.description, url: `/${key}` } };
@@ -41,6 +45,9 @@ export default async function Page({ params }: { params: Promise<{ slug?: string
   const { slug = [] } = await params;
   const key = slug.join('/');
   if (key === 'guides/ecommerce-email-marketing-strategy') return <EcommerceEmailMarketingGuide />;
+  if (key === 'blog') return <BlogIndex />;
+  const post = posts[key];
+  if (post) return <BlogPost post={post} />;
   if (key === 'services') return <ServiceIndex />;
   const service = servicePages[key];
   if (service) return <ServicePage service={service} />;

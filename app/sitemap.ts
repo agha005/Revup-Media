@@ -22,6 +22,10 @@ const paths = [
   '/services/email-list-growth',
   '/services/shopify-email-marketing',
   '/guides/ecommerce-email-marketing-strategy',
+  '/blog',
+  '/blog/ecommerce-email-automation-audit',
+  '/blog/ecommerce-email-segmentation',
+  '/blog/ecommerce-retention-email-calendar',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
