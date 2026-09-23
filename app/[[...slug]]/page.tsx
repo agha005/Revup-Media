@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { LegacyPage } from '../components/legacy-page';
 import { ServiceIndex, ServicePage, servicePages } from '../components/service-page';
+import { EcommerceEmailMarketingGuide } from '../components/guide-page';
 
 const files: Record<string, string> = {
   '': 'index.html', about: 'about.html', 'case-studies': 'case-studies.html',
@@ -29,6 +30,7 @@ const pageMetadata: Record<string, Metadata> = {
 export async function generateMetadata({ params }: { params: Promise<{ slug?: string[] }> }): Promise<Metadata> {
   const { slug = [] } = await params;
   const key = slug.join('/');
+  if (key === 'guides/ecommerce-email-marketing-strategy') return { title: 'Ecommerce Email Marketing Strategy Guide', description: 'A practical ecommerce email marketing strategy guide covering automation, campaigns, segmentation, list growth and retention.', alternates: { canonical: '/guides/ecommerce-email-marketing-strategy' } };
   if (key === 'services') return { title: 'Ecommerce Email Marketing Services', description: 'Ecommerce email marketing services for Klaviyo strategy, lifecycle automation, campaigns, SMS and list growth.', alternates: { canonical: '/services' } };
   const service = servicePages[key];
   if (service) return { title: service.title, description: service.description, alternates: { canonical: `/${key}` }, openGraph: { title: service.title, description: service.description, url: `/${key}` } };
@@ -38,6 +40,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug?: st
 export default async function Page({ params }: { params: Promise<{ slug?: string[] }> }) {
   const { slug = [] } = await params;
   const key = slug.join('/');
+  if (key === 'guides/ecommerce-email-marketing-strategy') return <EcommerceEmailMarketingGuide />;
   if (key === 'services') return <ServiceIndex />;
   const service = servicePages[key];
   if (service) return <ServicePage service={service} />;

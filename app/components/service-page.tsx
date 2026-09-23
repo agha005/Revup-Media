@@ -7,15 +7,27 @@ type Service = { title: string; eyebrow: string; description: string; intro: str
 
 export const servicePages: Record<string, Service> = {
   'services/klaviyo-email-marketing': {
-    title: 'Klaviyo Email Marketing Services', eyebrow: 'Klaviyo email marketing',
-    description: 'Klaviyo email marketing services for ecommerce brands: lifecycle strategy, campaign planning, email design, segmentation and testing.',
-    intro: 'RevUp Media helps ecommerce brands turn Klaviyo into a stronger retention channel. We connect strategy, copy, design and performance review so each send has a clear job to do.',
+    title: 'Klaviyo Agency & Email Marketing Services', eyebrow: 'Klaviyo agency',
+    description: 'Klaviyo agency services for ecommerce brands: lifecycle strategy, campaign planning, email design, segmentation and testing.',
+    intro: 'RevUp Media is a Klaviyo agency for ecommerce brands that want a stronger retention channel. We connect strategy, copy, design and performance review so each send has a clear job to do.',
     outcomes: ['A clear campaign rhythm built around your product calendar', 'Segmentation that makes messages more relevant', 'On-brand email design and copy direction', 'A practical testing and reporting framework'],
     process: ['Review the account, customer journey and current performance', 'Prioritise the highest-value lifecycle and campaign opportunities', 'Plan, create and review the work as one connected channel'],
     faqs: [
       { question: 'What does a Klaviyo email marketing agency do?', answer: 'A Klaviyo agency helps plan, build and improve the emails that support ecommerce retention, including campaigns, automations, segmentation, design and reporting.' },
       { question: 'Can you work with an existing Klaviyo account?', answer: 'Yes. We begin with the account and customer journey you have, then identify the most useful opportunities to improve first.' },
       { question: 'Do you create both strategy and email design?', answer: 'Yes. Strategy, campaign planning and creative are developed together so the final email feels consistent with the brand and the customer moment.' },
+    ],
+  },
+  'services/shopify-email-marketing': {
+    title: 'Shopify Email Marketing Agency', eyebrow: 'Shopify email marketing',
+    description: 'Shopify email marketing services for ecommerce brands, including Klaviyo strategy, lifecycle automation, campaigns, segmentation and SMS planning.',
+    intro: 'RevUp Media helps Shopify brands build a more connected email and SMS retention program. We turn customer, product and purchase data into useful campaigns and lifecycle messages.',
+    outcomes: ['A Shopify and Klaviyo retention strategy built around your store', 'Lifecycle flows for acquisition, conversion and post-purchase moments', 'Campaign direction aligned with launches, offers and inventory', 'Email and SMS planning that respects customer consent and attention'],
+    process: ['Review the Shopify customer journey, products and existing retention setup', 'Prioritise the highest-value gaps across capture, flows and campaigns', 'Create a practical email and SMS plan that can improve over time'],
+    faqs: [
+      { question: 'What does a Shopify email marketing agency do?', answer: 'A Shopify email marketing agency develops the campaigns, automations, customer segments and retention strategy that help a store communicate with customers after they visit or buy.' },
+      { question: 'Do I need Klaviyo for Shopify email marketing?', answer: 'Klaviyo is a common choice for ecommerce retention because it connects customer and store data with campaigns and automations. The right setup depends on your store, existing tools and goals.' },
+      { question: 'Can email and SMS work together for a Shopify store?', answer: 'Yes. Email carries more detail and story, while permission-based SMS can support time-sensitive moments. The important part is planning both channels as one customer experience.' },
     ],
   },
   'services/email-automation-flows': {
