@@ -22,7 +22,8 @@ function getBodyMarkup(source: string) {
 
   markup = markup
     .replace(/(<nav class="desktop-nav"[^>]*>[\s\S]*?<a[^>]*href="(?:\/|index\.html)"[^>]*>Home<\/a>)/i, '$1<a href="/services">Services</a><a href="/blog">Blog</a>')
-    .replace(/(<nav class="mobile-menu"[^>]*>[\s\S]*?<a[^>]*href="(?:\/|index\.html)"[^>]*>Home<\/a>)/i, '$1<a href="/services">Services</a><a href="/blog">Blog</a>');
+    .replace(/(<nav class="mobile-menu"[^>]*>[\s\S]*?<a[^>]*href="(?:\/|index\.html)"[^>]*>Home<\/a>)/i, '$1<a href="/services">Services</a><a href="/blog">Blog</a>')
+    .replace(/(<div class="footer-col"><h3>Pages<\/h3>)/i, '$1<a href="/services">Services</a><a href="/blog">Blog</a>');
 
   return markup
     .replace(/src=(['\"])\/assets\/([^'\"]+)\.(?:png|jpe?g)\1/gi, 'src=$1/assets/$2.webp$1')

@@ -1,0 +1,75 @@
+{
+  "checkedAt": "2026-10-01T10:43:32.128Z",
+  "origin": "http://localhost:3097",
+  "newArticles": 11,
+  "totalNewWords": 11456,
+  "report": [
+    {
+      "slug": "black-friday-email-marketing-strategy",
+      "words": 1163,
+      "imageBytes": 54896,
+      "status": "pass"
+    },
+    {
+      "slug": "black-friday-email-calendar",
+      "words": 1063,
+      "imageBytes": 56119,
+      "status": "pass"
+    },
+    {
+      "slug": "black-friday-klaviyo-segments",
+      "words": 1093,
+      "imageBytes": 60777,
+      "status": "pass"
+    },
+    {
+      "slug": "black-friday-email-subject-lines",
+      "words": 1061,
+      "imageBytes": 56600,
+      "status": "pass"
+    },
+    {
+      "slug": "klaviyo-flows-for-shopify",
+      "words": 1046,
+      "imageBytes": 57121,
+      "status": "pass"
+    },
+    {
+      "slug": "klaviyo-welcome-flow",
+      "words": 1015,
+      "imageBytes": 57594,
+      "status": "pass"
+    },
+    {
+      "slug": "klaviyo-abandoned-cart-flow",
+      "words": 1020,
+      "imageBytes": 56300,
+      "status": "pass"
+    },
+    {
+      "slug": "klaviyo-deliverability-checklist",
+      "words": 974,
+      "imageBytes": 56942,
+      "status": "pass"
+    },
+    {
+      "slug": "klaviyo-popup-list-growth",
+      "words": 1027,
+      "imageBytes": 56983,
+      "status": "pass"
+    },
+    {
+      "slug": "post-purchase-email-flow",
+      "words": 983,
+      "imageBytes": 56560,
+      "status": "pass"
+    },
+    {
+      "slug": "ecommerce-email-marketing-metrics",
+      "words": 1011,
+      "imageBytes": 60432,
+      "status": "pass"
+    }
+  ],
+  "problems": []
+}

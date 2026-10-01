@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import './blog.css';
 import { SiteSchema } from './components/site-schema';
 
 const siteUrl = 'https://www.revupmedia.co';

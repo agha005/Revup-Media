@@ -3,7 +3,8 @@ import type { Metadata } from 'next';
 import { LegacyPage } from '../components/legacy-page';
 import { ServiceIndex, ServicePage, servicePages } from '../components/service-page';
 import { EcommerceEmailMarketingGuide } from '../components/guide-page';
-import { BlogIndex, BlogPost, posts } from '../components/blog-page';
+import { posts } from '../components/blog-page';
+import { BlogIndex, BlogPost } from '../components/blog-views';
 
 const files: Record<string, string> = {
   '': 'index.html', about: 'about.html', 'case-studies': 'case-studies.html',
@@ -28,17 +29,50 @@ const pageMetadata: Record<string, Metadata> = {
   'case-studies/vape-at-door': { title: 'Vape At Door Email Marketing Case Study', description: 'See ecommerce email campaign creative and lifecycle marketing work for Vape At Door.', alternates: { canonical: '/case-studies/vape-at-door' } },
 };
 
-export async function generateMetadata({ params }: { params: Promise<{ slug?: string[] }> }): Promise<Metadata> {
+async function routeMetadata({ params }: { params: Promise<{ slug?: string[] }> }): Promise<Metadata> {
   const { slug = [] } = await params;
   const key = slug.join('/');
   if (key === 'guides/ecommerce-email-marketing-strategy') return { title: 'Ecommerce Email Marketing Strategy Guide', description: 'A practical ecommerce email marketing strategy guide covering automation, campaigns, segmentation, list growth and retention.', alternates: { canonical: '/guides/ecommerce-email-marketing-strategy' } };
-  if (key === 'blog') return { title: 'Ecommerce Email Marketing Blog', description: 'Original ecommerce email marketing, lifecycle automation, segmentation and retention strategy notes from RevUp Media.', alternates: { canonical: '/blog' } };
+  if (key === 'blog') return {
+    title: 'Ecommerce Email Marketing & Klaviyo Blog',
+    description: 'Practical Black Friday, Klaviyo and Shopify email marketing guides: campaigns, automation flows, deliverability, list growth and retention.',
+    alternates: { canonical: '/blog' },
+    openGraph: { type: 'website', title: 'Ecommerce Email Marketing & Klaviyo Blog', description: 'Practical guides to Black Friday campaigns, Klaviyo automation and ecommerce retention.', url: '/blog', images: [{ url: '/assets/blog/black-friday-email-marketing-strategy.png', width: 1200, height: 630, alt: 'RevUp Media ecommerce email marketing journal' }] },
+    twitter: { card: 'summary_large_image', title: 'Ecommerce Email Marketing & Klaviyo Blog', description: 'Practical guides to Black Friday campaigns, Klaviyo automation and ecommerce retention.', images: ['/assets/blog/black-friday-email-marketing-strategy.png'] },
+  };
   const post = posts[key];
-  if (post) return { title: post.title, description: post.description, alternates: { canonical: `/${key}` }, openGraph: { title: post.title, description: post.description, url: `/${key}` } };
+  if (post) {
+    const image = post.image ?? '/assets/og-revup-media-v2.png';
+    return {
+      title: post.seoTitle ?? post.title, description: post.description,
+      alternates: { canonical: '/' + key },
+      openGraph: { type: 'article', title: post.title, description: post.description, url: '/' + key, publishedTime: post.datePublished + 'T00:00:00+05:00', modifiedTime: post.dateModified + 'T00:00:00+05:00', authors: ['RevUp Media'], images: [{ url: image, width: 1200, height: 630, alt: post.imageAlt ?? post.title }] },
+      twitter: { card: 'summary_large_image', title: post.title, description: post.description, images: [image] },
+    };
+  }
   if (key === 'services') return { title: 'Ecommerce Email Marketing Services', description: 'Ecommerce email marketing services for Klaviyo strategy, lifecycle automation, campaigns, SMS and list growth.', alternates: { canonical: '/services' } };
   const service = servicePages[key];
   if (service) return { title: service.title, description: service.description, alternates: { canonical: `/${key}` }, openGraph: { title: service.title, description: service.description, url: `/${key}` } };
   return pageMetadata[key] ?? {};
+}
+
+export async function generateMetadata(input: { params: Promise<{ slug?: string[] }> }): Promise<Metadata> {
+  const metadata = await routeMetadata(input);
+  const { slug = [] } = await input.params;
+  const key = slug.join('/');
+  const title = typeof metadata.title === 'string' ? metadata.title : 'RevUp Media';
+  const description = metadata.description ?? 'Email strategy, automation and campaign creative for ecommerce brands.';
+  const defaultImage = { url: '/assets/og-revup-media-v2.png', width: 1200, height: 630, alt: 'RevUp Media ecommerce email marketing' };
+  return {
+    ...metadata,
+    openGraph: { type: 'website', siteName: 'RevUp Media', locale: 'en_US', title, description, url: key ? `/${key}` : '/', images: [defaultImage], ...metadata.openGraph },
+    twitter: { card: 'summary_large_image', title, description, images: ['/assets/og-revup-media-v2.png'], ...metadata.twitter },
+  };
+}
+
+export function generateStaticParams() {
+  const paths = [...Object.keys(files), 'blog', ...Object.keys(posts), 'services', ...Object.keys(servicePages), 'guides/ecommerce-email-marketing-strategy'];
+  return paths.map((key) => ({ slug: key ? key.split('/') : [] }));
 }
 
 export default async function Page({ params }: { params: Promise<{ slug?: string[] }> }) {

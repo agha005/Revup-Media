@@ -1,11 +1,13 @@
 import Link from 'next/link';
+import type { BlogArticle } from '../content/article-types';
+import { growthArticles } from '../content/growth-articles';
 
 const siteUrl = 'https://www.revupmedia.co';
 const bookingUrl = 'https://calendly.com/agha-abdulqadir2005/30min';
 
-type Post = { slug: string; title: string; description: string; label: string; readTime: string; intro: string; sections: Array<{ heading: string; body: string }> };
+type Post = BlogArticle;
 
-export const posts: Record<string, Post> = {
+const originalPosts: Record<string, Post> = {
   'blog/ecommerce-email-automation-audit': {
     slug: 'ecommerce-email-automation-audit', label: 'Lifecycle automation', readTime: '5 min read',
     title: 'How to audit ecommerce email automation without rebuilding everything',
@@ -41,15 +43,15 @@ export const posts: Record<string, Post> = {
   },
 };
 
-function Header() { return <header className="site-header"><div className="container nav-shell"><Link className="brand" href="/"><img src="/assets/revup-logo.png" alt="RevUp Media" /><span>REVUP <span>MEDIA</span></span></Link><nav className="desktop-nav" aria-label="Primary navigation"><Link href="/">Home</Link><Link href="/services">Services</Link><Link href="/blog">Blog</Link><Link href="/case-studies">Case Studies</Link><Link href="/about">About</Link></nav><a className="btn btn-primary btn-small nav-action" href={bookingUrl} target="_blank" rel="noopener">Book Free Audit <span className="arrow">→</span></a></div></header>; }
-
-export function BlogIndex() {
-  const blogSchema = { '@context': 'https://schema.org', '@type': 'Blog', name: 'RevUp Media Journal', url: `${siteUrl}/blog`, publisher: { '@id': `${siteUrl}/#organization` } };
-  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }} /><Header /><main className="service-page"><section className="service-hero"><div className="container"><p className="eyebrow">RevUp Media journal</p><h1>Practical ideas for stronger ecommerce retention.</h1><p className="service-lead">Original strategy notes for teams improving email marketing, lifecycle automation, segmentation and customer retention.</p></div></section><section className="section service-section"><div className="container"><div className="section-heading"><p className="eyebrow">Latest articles</p><h2>Useful thinking for the next message.</h2></div><div className="service-cards">{Object.values(posts).map((post) => <Link className="service-card" href={`/blog/${post.slug}`} key={post.slug}><p className="eyebrow">{post.label} · {post.readTime}</p><h2>{post.title}</h2><p>{post.description}</p><span>Read article →</span></Link>)}</div></div></section></main></>;
+export function articleWordCount(post: BlogArticle): number {
+  const text = [post.intro, post.takeaway ?? '', ...post.sections.flatMap((section) => [section.heading, section.body, ...(section.bullets ?? []), ...(section.table?.headers ?? []), ...(section.table?.rows.flat() ?? []), section.source?.note ?? '']), ...(post.faqs ?? []).flatMap((faq) => [faq.question, faq.answer])].join(' ');
+  return text.trim().split(/\s+/).length;
 }
 
-export function BlogPost({ post }: { post: Post }) {
-  const url = `${siteUrl}/blog/${post.slug}`;
-  const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', headline: post.title, description: post.description, mainEntityOfPage: url, author: { '@type': 'Organization', name: 'RevUp Media' }, publisher: { '@id': `${siteUrl}/#organization` }, datePublished: '2026-09-23', dateModified: '2026-09-23' };
-  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} /><Header /><main className="service-page"><article><section className="service-hero"><div className="container"><p className="eyebrow">{post.label} · {post.readTime}</p><h1>{post.title}</h1><p className="service-lead">{post.intro}</p><p className="byline">By RevUp Media · Updated September 23, 2026</p></div></section><section className="section service-section"><div className="container guide-copy">{post.sections.map((section) => <section className="blog-section" key={section.heading}><h2>{section.heading}</h2><p>{section.body}</p></section>)}<p className="eyebrow">Need a tailored plan?</p><h2>Turn the ideas into a retention program that fits your brand.</h2><p>Every store has different products, purchase cycles and customer expectations. A focused audit is the quickest way to find the work worth doing first.</p><a className="btn btn-primary" href={bookingUrl} target="_blank" rel="noopener">Book Your Free Audit <span className="arrow">→</span></a></div></section></article></main></>;
-}
+const newPosts = Object.fromEntries(growthArticles.map((post) => ['blog/' + post.slug, post]));
+export const posts: Record<string, BlogArticle> = Object.fromEntries(Object.entries({ ...newPosts, ...originalPosts }).map(([key, post]) => [key, {
+  ...post,
+  datePublished: post.datePublished ?? '2026-09-23',
+  dateModified: post.dateModified ?? '2026-09-23',
+  readTime: Math.max(1, Math.ceil(articleWordCount(post) / 200)) + ' min read',
+}]));
