@@ -8,7 +8,7 @@ const schema = {
       '@id': `${siteUrl}/#organization`,
       name: 'RevUp Media',
       url: siteUrl,
-      sameAs: ['https://www.linkedin.com/company/revupmedia26/'],
+      sameAs: ['https://www.linkedin.com/company/revupmedia26/', 'https://www.facebook.com/profile.php?id=61591764788520'],
       founder: { '@id': `${siteUrl}/about#abdul-qadir` },
       logo: `${siteUrl}/assets/revup-logo.png`,
       description: 'Ecommerce email marketing agency providing lifecycle strategy, email automation, campaign creative and retention marketing.',
