@@ -7,11 +7,12 @@ const siteUrl = 'https://www.revupmedia.co';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  icons: { icon: [{ url: '/favicon.png', type: 'image/png', sizes: '100x100' }], apple: '/favicon.png' },
   title: {
     default: 'Ecommerce Email Marketing Agency | RevUp Media',
     template: '%s | RevUp Media',
   },
-  description: 'Ecommerce email marketing for brands that want stronger retention: lifecycle strategy, Klaviyo flows, campaign creative, list growth and email design.',
+  description: 'RevUp Media helps ecommerce brands with Klaviyo and Shopify email marketing, automated flows, email design, campaigns, SMS strategy and retention.',
   keywords: ['ecommerce email marketing', 'Klaviyo agency', 'email marketing agency', 'email flows', 'retention marketing', 'email campaign design'],
   alternates: { canonical: '/' },
   openGraph: {

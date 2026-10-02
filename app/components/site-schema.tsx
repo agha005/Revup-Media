@@ -10,7 +10,7 @@ const schema = {
       url: siteUrl,
       sameAs: ['https://www.linkedin.com/company/revupmedia26/', 'https://www.facebook.com/profile.php?id=61591764788520'],
       founder: { '@id': `${siteUrl}/about#abdul-qadir` },
-      logo: `${siteUrl}/assets/revup-logo.png`,
+      logo: { '@type': 'ImageObject', url: `${siteUrl}/assets/revup-organization-logo.png`, width: 256, height: 256 },
       description: 'Ecommerce email marketing agency providing lifecycle strategy, email automation, campaign creative and retention marketing.',
     },
     {
@@ -22,6 +22,15 @@ const schema = {
       provider: { '@id': `${siteUrl}/#organization` },
       areaServed: 'Worldwide',
       serviceType: ['Ecommerce email marketing', 'Email automation', 'Email campaign design', 'Retention marketing'],
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog', name: 'Ecommerce email marketing services',
+        itemListElement: [
+          ['Klaviyo email marketing', '/services/klaviyo-email-marketing'],
+          ['Shopify email marketing', '/services/shopify-email-marketing'],
+          ['Email campaign management', '/services/email-campaign-management'],
+          ['Ecommerce SMS marketing', '/services/ecommerce-sms-marketing'],
+        ].map(([name, route]) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name, url: `${siteUrl}${route}`, provider: { '@id': `${siteUrl}/#organization` } } })),
+      },
     },
     {
       '@type': 'Person',
@@ -39,6 +48,7 @@ const schema = {
       url: siteUrl,
       name: 'RevUp Media',
       publisher: { '@id': `${siteUrl}/#organization` },
+      alternateName: 'RevUpMedia',
     },
   ],
 };

@@ -16,7 +16,7 @@ const files: Record<string, string> = {
 
 
 const pageMetadata: Record<string, Metadata> = {
-  '': { title: 'Ecommerce Email Marketing Agency', description: 'Ecommerce email marketing for brands that want stronger retention: lifecycle strategy, Klaviyo flows, campaign creative, list growth and email design.', alternates: { canonical: '/' } },
+  '': { title: 'Ecommerce Email Marketing Agency', description: 'RevUp Media helps ecommerce brands with Klaviyo and Shopify email marketing, automated flows, email design, campaigns, SMS strategy and retention.', alternates: { canonical: '/' } },
   about: { title: 'About RevUp Media & Founder Abdul Qadir', description: 'Meet Abdul Qadir, founder of RevUp Media, a remote ecommerce email marketing agency focused on lifecycle strategy, automation and campaign creative.', alternates: { canonical: '/about' } },
   'case-studies': { title: 'Ecommerce Email Marketing Case Studies', description: 'Explore ecommerce email marketing case studies, including campaign creative, lifecycle flows and supporting results evidence.', alternates: { canonical: '/case-studies' } },
   'case-studies/aussies-merch': { title: 'Aussies Merch Email Marketing Case Study', description: 'See the lifecycle email work, campaign creative and supporting results for Aussies Merch.', alternates: { canonical: '/case-studies/aussies-merch' } },

@@ -24,6 +24,7 @@ function getBodyMarkup(source: string) {
     .replace(/(<nav class="desktop-nav"[^>]*>[\s\S]*?<a[^>]*href="(?:\/|index\.html)"[^>]*>Home<\/a>)/i, '$1<a href="/services">Services</a><a href="/blog">Blog</a>')
     .replace(/(<nav class="mobile-menu"[^>]*>[\s\S]*?<a[^>]*href="(?:\/|index\.html)"[^>]*>Home<\/a>)/i, '$1<a href="/services">Services</a><a href="/blog">Blog</a>')
     .replace(/(<div class="footer-col"><h3>Pages<\/h3>)/i, '$1<a href="/services">Services</a><a href="/blog">Blog</a>')
+    .replace(/(<div class="footer-col"><h3>Start a project<\/h3>)/i, '<div class="footer-col"><h3>Email &amp; SMS services</h3><a href="/services/klaviyo-email-marketing">Klaviyo email marketing</a><a href="/services/shopify-email-marketing">Shopify email marketing</a><a href="/services/email-campaign-management">Email campaigns</a><a href="/services/ecommerce-sms-marketing">SMS strategy</a></div>$1')
     .replace(/(<div class="footer-col"><h3>Start a project<\/h3>)/i, '$1<a href="https://www.linkedin.com/company/revupmedia26/" target="_blank" rel="noopener">RevUp Media on LinkedIn</a><a href="https://www.facebook.com/profile.php?id=61591764788520" target="_blank" rel="noopener">RevUp Media on Facebook</a><a href="https://www.linkedin.com/in/abdul-qadir005" target="_blank" rel="noopener">Abdul Qadir on LinkedIn</a>');
 
   return markup
