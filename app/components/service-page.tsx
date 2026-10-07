@@ -3,7 +3,7 @@ import { SiteHeader, SiteFooter } from './site-navigation';
 import { serviceDetails } from '../content/service-details';
 
 const siteUrl = 'https://www.revupmedia.co';
-const bookingUrl = 'https://calendly.com/agha-abdulqadir2005/30min';
+const bookingUrl = 'https://calendly.com/ceo-revupmedia/30min';
 
 type Service = { title: string; eyebrow: string; description: string; intro: string; outcomes: string[]; process: string[]; faqs: Array<{ question: string; answer: string }> };
 

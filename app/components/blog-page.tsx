@@ -4,7 +4,7 @@ import { growthArticles } from '../content/growth-articles';
 import { buyerArticles } from '../content/buyer-articles';
 
 const siteUrl = 'https://www.revupmedia.co';
-const bookingUrl = 'https://calendly.com/agha-abdulqadir2005/30min';
+const bookingUrl = 'https://calendly.com/ceo-revupmedia/30min';
 
 type Post = BlogArticle;
 

@@ -4,7 +4,7 @@ import type { BlogArticle } from '../content/article-types';
 import { posts } from './blog-page';
 
 const siteUrl = 'https://www.revupmedia.co';
-const bookingUrl = 'https://calendly.com/agha-abdulqadir2005/30min';
+const bookingUrl = 'https://calendly.com/ceo-revupmedia/30min';
 const sectionId = (index: number) => `section-${index + 1}`;
 const displayDate = (date: string) => new Date(`${date}T12:00:00Z`).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 const jsonLd = (data: unknown) => JSON.stringify(data).replaceAll('<', '\\u003c');

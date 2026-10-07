@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { SiteHeader, SiteFooter } from './site-navigation';
 
 const siteUrl = 'https://www.revupmedia.co';
-const bookingUrl = 'https://calendly.com/agha-abdulqadir2005/30min';
+const bookingUrl = 'https://calendly.com/ceo-revupmedia/30min';
 
 const faqs = [
   { question: 'What is ecommerce email marketing?', answer: 'Ecommerce email marketing is the practice of using permission-based email to help customers discover products, make a purchase, get more value after buying and return when there is a relevant reason to do so.' },

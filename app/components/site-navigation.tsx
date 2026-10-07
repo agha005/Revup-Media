@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-const bookingUrl = 'https://calendly.com/agha-abdulqadir2005/30min';
+const bookingUrl = 'https://calendly.com/ceo-revupmedia/30min';
 const pages = [['/', 'Home'], ['/services', 'Services'], ['/blog', 'Blog'], ['/case-studies', 'Case Studies'], ['/about', 'About']];
 
 export function SiteHeader({ active }: { active?: string }) {
