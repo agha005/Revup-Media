@@ -467,3 +467,32 @@ button { font: inherit; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition-duration: .01ms !important; }
 }
+
+/* Homepage revenue evidence */
+.revenue-proof-section { background: linear-gradient(180deg, #111308, #090b07); border-top: 1px solid var(--line); padding-block: 76px; scroll-margin-top: var(--header-height); }
+.revenue-proof-heading { max-width: 760px; margin-bottom: 30px; }
+.revenue-proof-heading h2 { font-size: clamp(2.1rem, 3.6vw, 3.1rem); line-height: 1.1; margin: 12px 0 18px; }
+.revenue-proof-heading > p { color: var(--muted); max-width: 680px; }
+.revenue-proof-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.revenue-proof-card { min-width: 0; display: flex; flex-direction: column; padding: 26px; background: #11140d; border: 1px solid #3a4028; border-radius: 18px; }
+.revenue-proof-card-top { display: flex; justify-content: space-between; gap: 10px; color: #b5bca2; font-size: .7rem; letter-spacing: .04em; }
+.revenue-proof-card h3 { margin: 22px 0 16px; font-size: 1.35rem; letter-spacing: -.02em; }
+.revenue-proof-amount { margin: 0; color: var(--green-strong); font-size: clamp(1.9rem, 2.8vw, 2.4rem); font-weight: 800; line-height: 1.15; letter-spacing: -.04em; font-variant-numeric: tabular-nums; }
+.revenue-proof-label { margin: 8px 0 20px; color: #e2e5d7; font-size: .86rem; }
+.revenue-proof-share { margin: 0 0 7px; color: var(--muted); font-size: .85rem; }
+.revenue-proof-share strong { color: #fff; }
+.revenue-proof-period { color: #b5bca2; margin: 0 0 22px; font-size: .76rem; }
+.revenue-proof-image { display: flex; flex-direction: column; background: #fff; border-radius: 10px; overflow: hidden; border: 1px solid #636a49; }
+.revenue-proof-image img { width: 100%; height: auto; aspect-ratio: 2.15; object-fit: contain; }
+.revenue-proof-image > span { padding: 9px 12px; background: #23291a; color: #e3e9cf; font-size: .74rem; text-align: center; }
+.revenue-proof-scope { margin: 20px 0 24px; color: var(--muted); font-size: .87rem; }
+.revenue-proof-actions { display: grid; gap: 12px; margin-top: auto; text-align: center; }
+.revenue-proof-actions .btn { width: 100%; min-height: 48px; padding: 12px 18px; font-size: .87rem; }
+.revenue-proof-case-link { display: inline-flex; min-height: 40px; align-items: center; justify-content: center; gap: 8px; font-size: .85rem; color: #d3d9c1; }
+.revenue-proof-case-link:hover, .revenue-proof-image:hover > span { color: var(--green-strong); }
+.revenue-proof-section a:focus-visible { outline: 2px solid var(--green); outline-offset: 5px; }
+.revenue-proof-note { margin: 24px 0 0; max-width: 900px; color: #a9b196; font-size: .78rem; }
+.revenue-proof-quote { margin: 28px 0 0; padding-top: 24px; border-top: 1px solid #303721; color: #d6dcc9; font-size: .95rem; }
+.revenue-proof-quote cite { display: block; margin-top: 8px; color: #a9b196; font-size: .78rem; font-style: normal; }
+@media (max-width: 1000px) { .revenue-proof-grid { gap: 14px; } .revenue-proof-card { padding: 20px; } .revenue-proof-amount { font-size: clamp(1.7rem, 3vw, 2.1rem); } }
+@media (max-width: 760px) { .revenue-proof-section { padding-block: 56px; } .revenue-proof-grid { grid-template-columns: 1fr; gap: 20px; } .revenue-proof-card { padding: 24px; } .revenue-proof-amount { font-size: 2.3rem; } .revenue-proof-heading { margin-bottom: 28px; } }
