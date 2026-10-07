@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { SiteHeader, SiteFooter } from './site-navigation';
 import type { BlogArticle } from '../content/article-types';
 import { posts } from './blog-page';
 
@@ -8,18 +9,9 @@ const sectionId = (index: number) => `section-${index + 1}`;
 const displayDate = (date: string) => new Date(`${date}T12:00:00Z`).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 const jsonLd = (data: unknown) => JSON.stringify(data).replaceAll('<', '\\u003c');
 
-function Header() {
-  return <header className="site-header blog-header"><div className="container nav-shell">
-    <Link className="brand" href="/" aria-label="RevUp Media home"><img src="/assets/revup-logo.png" alt="" width="42" height="42" /><span>REVUP <span>MEDIA</span></span></Link>
-    <nav className="desktop-nav" aria-label="Primary navigation"><Link href="/">Home</Link><Link href="/services">Services</Link><Link href="/blog" aria-current="page">Blog</Link><Link href="/case-studies">Case Studies</Link><Link href="/about">About</Link></nav>
-    <a className="btn btn-primary btn-small nav-action" href={bookingUrl} target="_blank" rel="noopener">Book Free Audit <span className="arrow">→</span></a>
-    <details className="blog-mobile-menu"><summary>Menu</summary><nav aria-label="Mobile navigation"><Link href="/">Home</Link><Link href="/services">Services</Link><Link href="/blog">Blog</Link><Link href="/case-studies">Case Studies</Link><Link href="/about">About</Link><a href={bookingUrl} target="_blank" rel="noopener">Book a free audit ↗</a></nav></details>
-  </div></header>;
-}
+function Header() { return <SiteHeader active="/blog" />; }
 
-function Footer() {
-  return <footer className="blog-footer"><div className="container"><Link href="/">REVUP MEDIA</Link><p>Email strategy, automation and campaign creative for ecommerce brands.</p><nav aria-label="Footer navigation"><Link href="/blog">Journal</Link><Link href="/services">Services</Link><Link href="/case-studies">Case studies</Link><Link href="/about">About</Link><a href={bookingUrl} target="_blank" rel="noopener">Book a free audit ↗</a></nav><small>© 2026 RevUp Media</small></div></footer>;
-}
+function Footer() { return <SiteFooter />; }
 
 function PostCard({ post }: { post: BlogArticle }) {
   return <Link className="service-card blog-card" href={`/blog/${post.slug}`}>
@@ -32,10 +24,12 @@ export function BlogIndex() {
   const all = Object.values(posts);
   const seasonal = all.filter((post) => post.slug.startsWith('black-friday-'));
   const evergreen = all.filter((post) => post.datePublished === '2026-10-01' && !post.slug.startsWith('black-friday-'));
-  const original = all.filter((post) => post.datePublished !== '2026-10-01');
+  const buyers = all.filter((post) => post.label === 'Choosing an agency');
+  const original = all.filter((post) => post.datePublished !== '2026-10-01' && post.label !== 'Choosing an agency');
   const blogSchema = { '@context': 'https://schema.org', '@type': 'Blog', name: 'RevUp Media Journal', url: `${siteUrl}/blog`, publisher: { '@id': `${siteUrl}/#organization` }, blogPost: all.map((post) => ({ '@type': 'BlogPosting', headline: post.title, url: `${siteUrl}/blog/${post.slug}`, datePublished: post.datePublished, image: post.image ? `${siteUrl}${post.image}` : undefined })) };
   return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(blogSchema) }} /><Header /><main className="service-page journal">
     <section className="service-hero journal-hero"><div className="container"><p className="eyebrow">The RevUp Media journal</p><h1>Better email starts<br />with <span className="accent">useful thinking.</span></h1><p className="service-lead">Practical Black Friday planning, Klaviyo automation and ecommerce retention guides. Built to help you make the next decision with confidence.</p><nav className="blog-topics" aria-label="Browse article topics"><a href="#black-friday">Black Friday 2026 ↓</a><a href="#klaviyo">Klaviyo & retention ↓</a><a href="#strategy">Strategy notes ↓</a></nav></div></section>
+    <section className="section service-section" id="choosing-an-agency"><div className="container"><div className="section-heading"><p className="eyebrow">Choosing an agency</p><h2>Know what to ask before hiring.</h2><p className="blog-section-intro">Compare the scope, evidence and working relationship against what your store needs.</p></div><div className="service-cards">{buyers.map((post) => <PostCard post={post} key={post.slug} />)}</div></div></section>
     <section className="section service-section" id="black-friday"><div className="container"><div className="section-heading"><p className="eyebrow">Prepare before the peak</p><h2>Your Black Friday reading list.</h2><p className="blog-section-intro">Start with the strategy, then build your calendar, audiences and testing plan.</p></div><div className="service-cards">{seasonal.map((post) => <PostCard post={post} key={post.slug} />)}</div></div></section>
     <section className="section" id="klaviyo"><div className="container"><div className="section-heading"><p className="eyebrow">Build the everyday system</p><h2>Klaviyo, Shopify & customer retention.</h2><p className="blog-section-intro">Understand the setup, customer journey and evidence behind useful email marketing.</p></div><div className="service-cards">{evergreen.map((post) => <PostCard post={post} key={post.slug} />)}</div></div></section>
     <section className="section service-section" id="strategy"><div className="container"><div className="section-heading"><p className="eyebrow">From the journal</p><h2>Short strategy notes.</h2></div><div className="service-cards">{original.map((post) => <PostCard post={post} key={post.slug} />)}</div></div></section>

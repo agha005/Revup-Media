@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { BlogArticle } from '../content/article-types';
 import { growthArticles } from '../content/growth-articles';
+import { buyerArticles } from '../content/buyer-articles';
 
 const siteUrl = 'https://www.revupmedia.co';
 const bookingUrl = 'https://calendly.com/agha-abdulqadir2005/30min';
@@ -48,7 +49,7 @@ export function articleWordCount(post: BlogArticle): number {
   return text.trim().split(/\s+/).length;
 }
 
-const newPosts = Object.fromEntries(growthArticles.map((post) => ['blog/' + post.slug, post]));
+const newPosts = Object.fromEntries([...buyerArticles, ...growthArticles].map((post) => ['blog/' + post.slug, post]));
 export const posts: Record<string, BlogArticle> = Object.fromEntries(Object.entries({ ...newPosts, ...originalPosts }).map(([key, post]) => [key, {
   ...post,
   datePublished: post.datePublished ?? '2026-09-23',
