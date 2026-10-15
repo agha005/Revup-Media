@@ -10,7 +10,7 @@ const routeMap: Record<string, string> = {
   'index.html': '/', 'about.html': '/about', 'case-studies.html': '/case-studies',
   'case-study-aussies-merch.html': '/case-studies/aussies-merch', 'case-study-hardbody.html': '/case-studies/hardbody',
   'case-study-popuptee.html': '/case-studies/popuptee',
-  'case-study-moments-with-him.html': '/case-studies/moments-with-him',
+  'case-study-oz-smart.html': '/case-studies/oz-smart',
   'case-study-twinky.html': '/case-studies/twinky', 'case-study-us-boot.html': '/case-studies/us-boot', 'case-study-vape-at-door.html': '/case-studies/vape-at-door',
 };
 
@@ -33,7 +33,7 @@ function getBodyMarkup(source: string) {
   const heading = markup.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i)?.[1].replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
   const overview = heading ? caseStudyOverviews[heading] : undefined;
   if (overview && !markup.includes('class="case-overview')) {
-    const labels = ['Brand Background', 'Mission &amp; Challenges', 'Results &amp; Achievements'];
+    const labels = heading === 'OZ Smart' ? ['Brand Background', 'Design Scope', 'Creative Delivered'] : ['Brand Background', 'Mission &amp; Challenges', 'Results &amp; Achievements'];
     const cards = overview.map((text, index) => `<article><span>${labels[index]}</span><p>${text}</p></article>`).join('');
     markup = markup.replace('<div class="container case-story">', `<div class="container case-story"><section class="case-overview" aria-label="Case study summary">${cards}</section>`);
   }

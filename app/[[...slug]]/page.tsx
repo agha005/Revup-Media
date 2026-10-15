@@ -10,7 +10,7 @@ const files: Record<string, string> = {
   '': 'index.html', about: 'about.html', 'case-studies': 'case-studies.html',
   'case-studies/aussies-merch': 'case-study-aussies-merch.html', 'case-studies/hardbody': 'case-study-hardbody.html',
   'case-studies/popuptee': 'case-study-popuptee.html',
-  'case-studies/moments-with-him': 'case-study-moments-with-him.html',
+  'case-studies/oz-smart': 'case-study-oz-smart.html',
   'case-studies/twinky': 'case-study-twinky.html', 'case-studies/us-boot': 'case-study-us-boot.html', 'case-studies/vape-at-door': 'case-study-vape-at-door.html',
 };
 
@@ -22,7 +22,7 @@ const pageMetadata: Record<string, Metadata> = {
   'case-studies/aussies-merch': { title: 'Aussies Merch Email Marketing Case Study', description: 'See the lifecycle email work, campaign creative and supporting results for Aussies Merch.', alternates: { canonical: '/case-studies/aussies-merch' } },
   'case-studies/hardbody': { title: 'HardBody Email Marketing Case Study', description: 'See email campaign creative, lifecycle marketing work and supporting results for HardBody.', alternates: { canonical: '/case-studies/hardbody' } },
   'case-studies/popuptee': { title: 'PopUpTee Email Marketing Case Study', description: 'See lifecycle email marketing and campaign creative work for PopUpTee.', alternates: { canonical: '/case-studies/popuptee' } },
-  'case-studies/moments-with-him': { title: 'Moments With Him Email & SMS Case Study', description: 'See lifecycle email, SMS, campaign and capture work for Moments With Him, with supporting attributed-revenue evidence.', alternates: { canonical: '/case-studies/moments-with-him' } },
+  'case-studies/oz-smart': { title: 'OZ Smart Email Design Case Study', description: 'Explore OZ Smart lifecycle email design and the welcome flow artwork from RevUp Media.', alternates: { canonical: '/case-studies/oz-smart' } },
   'case-studies/twinky': { title: 'Twinky Email Marketing Case Study', description: 'See ecommerce email flows, campaign creative and lifecycle work for Twinky.', alternates: { canonical: '/case-studies/twinky' } },
   'case-studies/us-boot': { title: 'US Boot Email Marketing Case Study', description: 'See ecommerce email flows, campaign creative and lifecycle work for US Boot.', alternates: { canonical: '/case-studies/us-boot' } },
   'case-studies/vape-at-door': { title: 'Vape At Door Email Marketing Case Study', description: 'See ecommerce email campaign creative and lifecycle marketing work for Vape At Door.', alternates: { canonical: '/case-studies/vape-at-door' } },
