@@ -9,7 +9,6 @@ const paths = [
   '/case-studies',
   '/case-studies/aussies-merch',
   '/case-studies/hardbody',
-  '/case-studies/linen-tales',
   '/case-studies/popuptee',
   '/case-studies/moments-with-him',
   '/case-studies/twinky',

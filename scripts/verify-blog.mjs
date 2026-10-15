@@ -58,7 +58,7 @@ for (const post of growthArticles) {
 }
 
 const allLinks = [...index.matchAll(/href="(\/[^"#?]*)"/g)].map(([, href]) => href);
-for (const route of new Set([...allLinks, '/services/klaviyo-email-marketing', '/services/shopify-email-marketing', '/services/email-automation-flows', '/services/email-list-growth', '/services/email-campaign-management', '/case-studies/linen-tales', '/not-a-real-revup-page'])) {
+for (const route of new Set([...allLinks, '/services/klaviyo-email-marketing', '/services/shopify-email-marketing', '/services/email-automation-flows', '/services/email-list-growth', '/services/email-campaign-management', '/not-a-real-revup-page'])) {
   const response = await fetch(`${origin}${route}`);
   const expected = route === '/not-a-real-revup-page' ? 404 : 200;
   if (response.status !== expected) problems.push({ route, error: `Expected ${expected}, got ${response.status}` });

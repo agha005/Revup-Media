@@ -301,7 +301,6 @@ button { font: inherit; }
 .case-card { min-height: 430px; border: 1px solid var(--line-soft); border-radius: 16px; overflow: hidden; background: var(--panel); position: relative; }
 .case-card-media { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 7px; opacity: .7; }
 .case-card-media--aussies { grid-template-columns: repeat(4, 1fr); }
-.case-card-media--linen-tales { grid-template-columns: repeat(4, 1fr); }
 .case-card-media--twinky { grid-template-columns: repeat(4, 1fr); }
 .case-card-media--single { grid-template-columns: 1fr; }
 .case-card-media--vape { grid-template-columns: repeat(2, 1fr); }
@@ -463,8 +462,6 @@ button { font: inherit; }
   .case-card-media > :nth-child(n+4) { display: none; }
   .case-card-media--aussies { grid-template-columns: repeat(4,1fr); }
   .case-card-media--aussies > :nth-child(n+4) { display: block; }
-  .case-card-media--linen-tales { grid-template-columns: repeat(4,1fr); }
-  .case-card-media--linen-tales > :nth-child(n+4) { display: block; }
   .case-card-media--twinky { grid-template-columns: repeat(4,1fr); }
   .case-card-media--twinky > :nth-child(n+4) { display: block; }
   .case-card-media--vape { grid-template-columns: repeat(2,1fr); }

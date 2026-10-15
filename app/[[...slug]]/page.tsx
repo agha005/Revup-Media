@@ -9,7 +9,7 @@ import { BlogIndex, BlogPost } from '../components/blog-views';
 const files: Record<string, string> = {
   '': 'index.html', about: 'about.html', 'case-studies': 'case-studies.html',
   'case-studies/aussies-merch': 'case-study-aussies-merch.html', 'case-studies/hardbody': 'case-study-hardbody.html',
-  'case-studies/linen-tales': 'case-study-linen-tales.html', 'case-studies/popuptee': 'case-study-popuptee.html',
+  'case-studies/popuptee': 'case-study-popuptee.html',
   'case-studies/moments-with-him': 'case-study-moments-with-him.html',
   'case-studies/twinky': 'case-study-twinky.html', 'case-studies/us-boot': 'case-study-us-boot.html', 'case-studies/vape-at-door': 'case-study-vape-at-door.html',
 };
@@ -21,7 +21,6 @@ const pageMetadata: Record<string, Metadata> = {
   'case-studies': { title: 'Ecommerce Email Marketing Case Studies', description: 'Explore ecommerce email marketing case studies, including campaign creative, lifecycle flows and supporting results evidence.', alternates: { canonical: '/case-studies' } },
   'case-studies/aussies-merch': { title: 'Aussies Merch Email Marketing Case Study', description: 'See the lifecycle email work, campaign creative and supporting results for Aussies Merch.', alternates: { canonical: '/case-studies/aussies-merch' } },
   'case-studies/hardbody': { title: 'HardBody Email Marketing Case Study', description: 'See email campaign creative, lifecycle marketing work and supporting results for HardBody.', alternates: { canonical: '/case-studies/hardbody' } },
-  'case-studies/linen-tales': { title: 'Linen Tales Email Marketing Case Study', description: 'See ecommerce email strategy, creative and supporting results for Linen Tales.', alternates: { canonical: '/case-studies/linen-tales' } },
   'case-studies/popuptee': { title: 'PopUpTee Email Marketing Case Study', description: 'See lifecycle email marketing and campaign creative work for PopUpTee.', alternates: { canonical: '/case-studies/popuptee' } },
   'case-studies/moments-with-him': { title: 'Moments With Him Email & SMS Case Study', description: 'See lifecycle email, SMS, campaign and capture work for Moments With Him, with supporting attributed-revenue evidence.', alternates: { canonical: '/case-studies/moments-with-him' } },
   'case-studies/twinky': { title: 'Twinky Email Marketing Case Study', description: 'See ecommerce email flows, campaign creative and lifecycle work for Twinky.', alternates: { canonical: '/case-studies/twinky' } },
