@@ -302,6 +302,7 @@ button { font: inherit; }
 .case-card-media { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 7px; opacity: .7; }
 .case-card-media--aussies { grid-template-columns: repeat(4, 1fr); }
 .case-card-media--twinky { grid-template-columns: repeat(4, 1fr); }
+.case-card-media--oz { grid-template-columns: repeat(4, 1fr); }
 .case-card-media--single { grid-template-columns: 1fr; }
 .case-card-media--vape { grid-template-columns: repeat(2, 1fr); }
 .case-card-media--us-boot { grid-template-columns: repeat(2, 1fr); }
@@ -338,6 +339,7 @@ button { font: inherit; }
 .story-row { display: grid; grid-template-columns: 240px 1fr; gap: 70px; padding: 64px 0; border-bottom: 1px solid var(--line-soft); }
 .story-row h2 { margin: 0; font-size: 1.2rem; font-weight: 620; }
 .story-copy { color: var(--muted); font-size: 1.05rem; }
+.story-copy h3 { color: var(--text); font-size: 1.25rem; margin: 0 0 12px; }
 .case-overview { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin: 4px 0 22px; overflow: hidden; border: 1px solid var(--line-soft); border-radius: 14px; background: var(--line-soft); }
 .case-overview article { padding: 26px; background: var(--panel); }
 .case-overview span { display: block; margin-bottom: 14px; color: var(--green); font-size: .72rem; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; }
@@ -467,6 +469,8 @@ button { font: inherit; }
   .case-card-media--aussies > :nth-child(n+4) { display: block; }
   .case-card-media--twinky { grid-template-columns: repeat(4,1fr); }
   .case-card-media--twinky > :nth-child(n+4) { display: block; }
+  .case-card-media--oz { grid-template-columns: repeat(4,1fr); }
+  .case-card-media--oz > :nth-child(n+4) { display: block; }
   .case-card-media--vape { grid-template-columns: repeat(2,1fr); }
   .case-card-content { inset: auto 18px 18px; gap: 14px; }
   .case-card-content::after { padding: 10px 14px; font-size: .7rem; }
