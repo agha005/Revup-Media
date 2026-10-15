@@ -1,6 +1,6 @@
-type Resource = { href: string; title: string; description: string };
+type Resource = { href: string; title: string; description: string; action?: string };
 type ServiceDetail = { heading: string; fit: string; deliverables: { title: string; text: string }[]; proof: Resource[]; guides: Resource[]; related: string[] };
-const moments: Resource = { href: '/#result-moments-with-him', title: 'Moments With Him: revenue snapshot', description: 'See $111,050.73 in email and SMS attributed revenue for August 17–September 16, 2026. Attribution describes platform reporting; it does not establish incremental revenue.' };
+const moments: Resource = { href: '/#result-moments-with-him', title: 'Moments With Him: revenue snapshot', description: 'See $111,050.73 in email and SMS attributed revenue for August 17–September 16, 2026. Attribution describes platform reporting; it does not establish incremental revenue.', action: 'View revenue snapshot →' };
 const usBoot: Resource = { href: '/case-studies/us-boot', title: 'US Boot: flows, campaigns and subscriber capture', description: 'Explore the five-day implementation for a footwear brand preparing for a media feature, with the before-and-after Klaviyo dashboards and campaign examples.' };
 const aussies: Resource = { href: '/case-studies/aussies-merch', title: 'Aussies Merch: lifecycle email and creative', description: 'See lifecycle flow work, branded campaign artwork and the supporting performance evidence for an ecommerce merchandise brand.' };
 const hardbody: Resource = { href: '/case-studies/hardbody', title: 'HardBody: ecommerce campaign creative', description: 'Review product-focused email campaigns and the supporting Omnisend dashboard for a fitness ecommerce brand.' };

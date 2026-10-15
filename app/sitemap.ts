@@ -27,10 +27,13 @@ const paths = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return paths.map((path) => ({
-    url: `${siteUrl}${path}`,
-    lastModified: posts[path.slice(1)]?.dateModified ?? '2026-10-07',
-    changeFrequency: path.startsWith('/case-studies/') ? 'monthly' : 'weekly',
-    priority: path === '' ? 1 : path.startsWith('/services/') || path === '/case-studies' ? 0.9 : 0.7,
-  }));
+  return paths.map((path) => {
+    const lastModified = posts[path.slice(1)]?.dateModified;
+    return {
+      url: `${siteUrl}${path}`,
+      ...(lastModified ? { lastModified } : {}),
+      changeFrequency: path.startsWith('/case-studies/') ? 'monthly' : 'weekly',
+      priority: path === '' ? 1 : path.startsWith('/services/') || path === '/case-studies' ? 0.9 : 0.7,
+    };
+  });
 }
