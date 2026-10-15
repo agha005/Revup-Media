@@ -532,6 +532,7 @@ button { font: inherit; }
 .revenue-proof-card { min-width: 0; display: flex; flex-direction: column; padding: 26px; background: #11140d; border: 1px solid #3a4028; border-radius: 18px; }
 .revenue-proof-card-top { display: flex; justify-content: space-between; gap: 10px; color: #b5bca2; font-size: .7rem; letter-spacing: .04em; }
 .revenue-proof-card h3 { margin: 22px 0 16px; font-size: 1.35rem; letter-spacing: -.02em; }
+.revenue-proof-source { margin: -8px 0 16px; color: #b5bca2; font-size: .76rem; }
 .revenue-proof-amount { margin: 0; color: var(--green-strong); font-size: clamp(1.9rem, 2.8vw, 2.4rem); font-weight: 800; line-height: 1.15; letter-spacing: -.04em; font-variant-numeric: tabular-nums; }
 .revenue-proof-label { margin: 8px 0 20px; color: #e2e5d7; font-size: .86rem; }
 .revenue-proof-share { margin: 0 0 7px; color: var(--muted); font-size: .85rem; }
