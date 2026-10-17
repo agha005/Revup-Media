@@ -22,12 +22,12 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     ], related: ['services/shopify-email-marketing', 'services/email-automation-flows', 'services/email-campaign-management'],
   },
   'services/shopify-email-marketing': {
-    heading: 'Connect your store journey with email and SMS',
-    fit: 'For Shopify brands whose retention messages need to reflect what happens in the store: product discovery, checkout, purchase and repeat buying. The plan begins with the store and its customer data rather than a generic sending schedule.',
+    heading: 'What a Shopify email program needs to get right',
+    fit: 'For Shopify teams using Klaviyo or reviewing a move to it. We start with the data and messages already active in the store, so the plan addresses real gaps in signup, checkout and customer follow-up.',
     deliverables: [
-      { title: 'Store and signup journey review', text: 'Review how visitors discover products, subscribe and become customers. Check whether signup benefits, store promotions and first-order messages agree, and identify where the experience loses context.' },
-      { title: 'Lifecycle messaging plan', text: 'Map welcome, abandonment and post-purchase messages to the events available in your account. Consider product choice, purchase history and the point where promotional reminders should stop after an order.' },
-      { title: 'A campaign calendar tied to the store', text: 'Plan sends around launches, collections, stock and approved offers. Coordinate campaigns with live flows so a customer receives a coherent experience across the channels included in the project.' },
+      { title: 'Store data and signup audit', text: 'Check whether product views, checkout starts and orders reach Klaviyo as expected. Compare the signup offer on the storefront with the welcome message, audience rules and consent collected.' },
+      { title: 'Cart and checkout coordination', text: 'Identify which platform sends each reminder so Shopify and Klaviyo do not send competing checkout emails. Check links, product content and purchase exits before adding more messages.' },
+      { title: 'Post-purchase and campaign plan', text: 'Use the products bought and the next customer question to plan follow-up. Schedule campaigns around real inventory and approved offers, then review results with both platform attribution and store sales in view.' },
     ], proof: [usBoot, moments],
     guides: [
       { href: '/blog/klaviyo-flows-for-shopify', title: 'Klaviyo flows for Shopify', description: 'A practical guide to choosing and checking your first automations.' },

@@ -22,14 +22,15 @@ export const servicePages: Record<string, Service> = {
   },
   'services/shopify-email-marketing': {
     title: 'Shopify Email Marketing Agency', eyebrow: 'Shopify email marketing',
-    description: 'Shopify email marketing services for ecommerce brands, including Klaviyo strategy, lifecycle automation, campaigns, segmentation and SMS planning.',
-    intro: 'RevUp Media helps Shopify brands build a more connected email and SMS retention program. We turn customer, product and purchase data into useful campaigns and lifecycle messages.',
-    outcomes: ['A Shopify and Klaviyo retention strategy built around your store', 'Lifecycle flows for acquisition, conversion and post-purchase moments', 'Campaign direction aligned with launches, offers and inventory', 'Email and SMS planning that respects customer consent and attention'],
-    process: ['Review the Shopify customer journey, products and existing retention setup', 'Prioritise the highest-value gaps across capture, flows and campaigns', 'Create a practical email and SMS plan that can improve over time'],
+    description: 'Shopify email marketing services: audit store and Klaviyo data, fix overlapping checkout messages, and plan welcome, cart and post-purchase flows.',
+    intro: 'RevUp Media helps Shopify stores plan email around real customer actions. We review the Shopify and Klaviyo connection, signup promise, cart and checkout messages, then build a practical plan for flows, campaigns and reporting.',
+    outcomes: ['A review of the store events and customer data available to Klaviyo', 'Welcome, cart, checkout and post-purchase messages with clear entry and exit rules', 'A check for overlapping Shopify and Klaviyo checkout reminders', 'Campaign and SMS planning aligned with live offers and customer permission'],
+    process: ['Check store events, signup forms, consent and existing Shopify and Klaviyo messages', 'Map the customer journey and resolve duplicate reminders or missing purchase exits', 'Prioritise flow and campaign work, then review clicks, orders and attributed revenue in context'],
     faqs: [
-      { question: 'What does a Shopify email marketing agency do?', answer: 'A Shopify email marketing agency develops the campaigns, automations, customer segments and retention strategy that help a store communicate with customers after they visit or buy.' },
-      { question: 'Do I need Klaviyo for Shopify email marketing?', answer: 'Klaviyo is a common choice for ecommerce retention because it connects customer and store data with campaigns and automations. The right setup depends on your store, existing tools and goals.' },
-      { question: 'Can email and SMS work together for a Shopify store?', answer: 'Yes. Email carries more detail and story, while permission-based SMS can support time-sensitive moments. The important part is planning both channels as one customer experience.' },
+      { question: 'What should a Shopify email marketing audit check first?', answer: 'Start with the Shopify data reaching your email platform, the signup offer customers see, active welcome and abandonment messages, and whether purchase events stop reminders. This reveals missing journeys and conflicting messages before new creative is built.' },
+      { question: 'Can Shopify and Klaviyo send duplicate abandoned checkout emails?', answer: 'Yes, if both platforms have checkout reminders enabled. Review the active messages and their triggers before changing a flow, then check that purchasers leave the reminder sequence.' },
+      { question: 'Do I need Klaviyo for Shopify email marketing?', answer: 'Klaviyo can use Shopify customer, product and order data for campaigns and flows. The right setup depends on your existing tools, data quality, consent and the customer journeys you need.' },
+      { question: 'How do you judge whether the work is helping?', answer: 'Review delivery, clicks, orders and attributed revenue alongside store-wide results. Platform attribution is useful for diagnosis, but it does not by itself prove an incremental sales lift.' },
     ],
   },
   'services/email-automation-flows': {
