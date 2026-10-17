@@ -15,18 +15,24 @@ Website: https://www.revupmedia.co
 - Added the user-confirmed Instagram profile `https://www.instagram.com/revup_media_00/` to the site's `Organization.sameAs` data alongside the existing Facebook and LinkedIn company pages.
 - Added visible Instagram, Facebook and LinkedIn links to the About page and the site footers.
 - Published the changes to production and verified the live homepage, About page and a journal article return HTTP 200 and contain the three social links in the organization data.
+- In Search Console, requested recrawling of the updated homepage and About page on October 17. The interface completed its live URL check and returned to the URL Inspection view with “Request submitted.” Google still controls recrawl timing and search appearance.
 
 Google's Organization documentation says social profile URLs in `sameAs` can help it understand and distinguish an organization. Google still controls whether and how the profiles appear together in search results; markup and links do not guarantee a specific search layout.
 
-## What remains unmeasured
+## Search Console findings and remaining limits
 
-- No Google Search Console Performance or Page Indexing data was available. Actual search clicks, impressions, query positions, indexing exclusions and the cause of low traffic cannot be determined from public pages alone.
-- No Core Web Vitals field report was collected during this audit.
+- Google Search Console reports 141 impressions, 5 clicks, 3.5% click-through rate and average position 47.4 for September 22–October 14. The past seven days (October 8–14) show 61 impressions, 2 clicks and average position 55.7. The small sample and young reporting window make trends uncertain, but the principal current constraint is low search visibility, not broad deindexing.
+- The highest-impression reported query was “shopify email marketing agency” (14 impressions, 0 reported clicks). The only reported brand-like query was “revup” (1 impression). Search Console may omit or anonymize low-volume queries, so the visible query list is not a complete count of brand searches.
+- The pages with the most reported impressions include Shopify email marketing (19), post-purchase email flow (17), Klaviyo welcome flow (14), and the strategy guide (14). These have 0 reported clicks in this window. The homepage had 13 impressions and 1 click.
+- Page Indexing (last updated October 12) reports 35 indexed URLs and 2 excluded. Both exclusions are expected homepage redirects (`https://revupmedia.co/` and `http://revupmedia.co/`) to the preferred www HTTPS address. The sitemap was submitted October 7, last read October 13, and shows Success with 35 discovered pages.
+- The indexed URL list still includes older Linen Tales and Moments With Him case study URLs. The live Linen Tales URL now returns 404; Moments With Him redirects to the case studies page. Exact-URL temporary removal requests for both were submitted October 17 and were processing at the time of this report. The current sitemap omits both. Search Console's indexing report can take time to reflect these changes.
+- Search Console's Links report shows 0 external links at this time. This report can lag behind live pages linking to the site; it is not proof that no backlinks exist.
+- Core Web Vitals reports no data for mobile or desktop, so no field performance conclusion is available.
 - The Instagram profile did not surface in the research search results for its exact handle at audit time. This is a limited observation, not proof that Google has not indexed it.
 
 ## Next priorities
 
-1. Verify the domain in Google Search Console, submit `https://www.revupmedia.co/sitemap.xml`, and check the Page Indexing and Performance reports. Compare branded queries such as “RevUp Media” with non-branded service queries.
+1. Track the Performance report weekly as the recently published pages mature. Compare brand queries and high-intent service queries, especially the Shopify agency page. Prioritize visibility and useful evidence before changing copy based on single-impression terms.
 2. Ensure the Instagram and Facebook profiles publicly link back to `https://www.revupmedia.co/`, use the same RevUp Media name/logo, and describe the Karachi ecommerce email marketing agency. The LinkedIn company page already links to the website.
 3. Review Search Console queries and pages after recrawling. Update titles or content only where impressions, position and click-through rate show a specific opportunity.
 
