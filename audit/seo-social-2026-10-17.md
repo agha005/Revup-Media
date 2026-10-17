@@ -29,11 +29,12 @@ Google's Organization documentation says social profile URLs in `sameAs` can hel
 - Search Console's Links report shows 0 external links at this time. This report can lag behind live pages linking to the site; it is not proof that no backlinks exist.
 - Core Web Vitals reports no data for mobile or desktop, so no field performance conclusion is available.
 - The Instagram profile did not surface in the research search results for its exact handle at audit time. This is a limited observation, not proof that Google has not indexed it.
+- The Instagram account is publicly viewable and its bio links to the case studies page. The Facebook page also links to the case studies page, while LinkedIn links to the homepage. Each connection points to the same website, though profile discovery in Google is still at Google's discretion.
 
 ## Next priorities
 
 1. Track the Performance report weekly as the recently published pages mature. Compare brand queries and high-intent service queries, especially the Shopify agency page. Prioritize visibility and useful evidence before changing copy based on single-impression terms.
-2. Ensure the Instagram and Facebook profiles publicly link back to `https://www.revupmedia.co/`, use the same RevUp Media name/logo, and describe the Karachi ecommerce email marketing agency. The LinkedIn company page already links to the website.
+2. Keep the Instagram, Facebook and LinkedIn names, logos, descriptions and website links consistent as the profiles develop. All three already link back to the site.
 3. Review Search Console queries and pages after recrawling. Update titles or content only where impressions, position and click-through rate show a specific opportunity.
 
 Google reference: https://developers.google.com/search/docs/appearance/structured-data/organization
